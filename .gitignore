@@ -24,8 +24,5 @@ build/
 .AppleDouble
 .LSOverride
 
-# FileMaker
-*.fmp12
-
 import.log
 .parcel-cache
