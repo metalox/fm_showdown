@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+      <style>
+     @import "./src/style.css";
+ </style>
+    <title>FM Showdown</title>
+  </head>
+  <body>
+      <p style="text-align:center;background-color: slategray; color: white; padding: 5px; margin:10px;">Markdown to html converter</p>
+
+      <div id="output" style="border-color: darkslategrey; border-width: 1px; border-style: solid; padding: 10px; margin: 10px;" ></div>
+    <div>
+      <button id="refresh-button" style ="width:100px" class="outline">Refresh</button>
+    <button id="save-button" style ="width:100px">Save</button>
+</div>
+    <script type="module">
+      import "./src/index.js";
+    </script>
+
+  </body>
+</html>
