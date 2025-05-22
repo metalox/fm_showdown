@@ -1,20 +1,23 @@
 // Import Showdown
 import showdown from 'showdown';
 
-// Initialize Showdown converter
+// Set global options before creating converter
+showdown.setOption('noHeaderId', true);
+
+// Initialize Showdown converter    
 const converter = new showdown.Converter();
 
 // Get references to DOM elements
 const outputDiv = document.getElementById('output');
-const refreshBtn = document.getElementById('refresh-button');
+const getBtn = document.getElementById('get-button');
 const saveBtn = document.getElementById('save-button');
 
 // Variable to store the converted HTML
 let currentHtml = '';
 
-function fmRefreshScript() {
+function fmGetScript() {
   if (typeof FileMaker !== 'undefined') {
-    FileMaker.PerformScriptWithOption("LoadWidget", "", 0);
+    FileMaker.PerformScriptWithOption("MarkdownToHtmlJS", "", 0);
   } else {
     console.error('FileMaker object is not available');
   }
@@ -29,9 +32,9 @@ function fmSaveHtml() {
 }
 
 // Button click handlers
-if (refreshBtn) {
-  refreshBtn.onclick = function () {
-    fmRefreshScript();
+if (getBtn) {
+  getBtn.onclick = function () {
+    fmGetScript();
   };
 } else {
   console.error('Refresh button not found');
