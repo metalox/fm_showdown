@@ -17,7 +17,7 @@ let currentHtml = '';
 
 function fmGetScript() {
   if (typeof FileMaker !== 'undefined') {
-    FileMaker.PerformScriptWithOption("MarkdownToHtmlJS", "", 0);
+    FileMaker.PerformScriptWithOption("MarkdownToHtmlJSPreview", "", 0);
   } else {
     console.error('FileMaker object is not available');
   }
@@ -65,9 +65,19 @@ function convertText(text) {
 }
 
 // Function that can be called from FileMaker
-window.markdownToHtml = function (text) {
+window.markdownToHtmlPreview = function (text) {
   if (text) {
     convertText(text);
+  }
+}
+
+// Function that converts markdown to HTML, displays it, and saves to FileMaker
+window.markdownToHtmlAndSave = function (text) {
+  if (text) {
+    // Convert and display the markdown
+    convertText(text);
+    // Save the HTML to FileMaker
+    fmSaveHtml();
   }
 }
 
