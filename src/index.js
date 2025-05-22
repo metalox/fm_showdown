@@ -3,13 +3,18 @@ import showdown from 'showdown';
 
 // Set global options before creating converter
 showdown.setOption('noHeaderId', true);
+showdown.setOption('strikethrough', true);
+showdown.setOption('tasklists', true);
+showdown.setOption('parseImgDimension', true);
+showdown.setOption('tables', true);
+showdown.setOption('backslashEscapesHTMLTags', true);
 
 // Initialize Showdown converter    
 const converter = new showdown.Converter();
 
 // Get references to DOM elements
 const outputDiv = document.getElementById('output');
-const getBtn = document.getElementById('get-button');
+const previewBtn = document.getElementById('preview-button');
 const saveBtn = document.getElementById('save-button');
 
 // Variable to store the converted HTML
@@ -32,8 +37,8 @@ function fmSaveHtml() {
 }
 
 // Button click handlers
-if (getBtn) {
-  getBtn.onclick = function () {
+if (previewBtn) {
+  previewBtn.onclick = function () {
     fmGetScript();
   };
 } else {
