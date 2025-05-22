@@ -19,7 +19,7 @@ A FileMaker widget that converts Markdown to HTML using the Showdown library.
 ## Usage
 
 1. Import the widget into your FileMaker solution
-2. Use the `markdownToHtmlAndSave` function to convert markdown to HTML adn save back to filemaker
+2. Use the `markdownToHtmlAndSave` function to convert markdown to HTML and save back to filemaker
 3. See included scripts for example usage
 
 ## Credits
