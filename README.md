@@ -7,7 +7,7 @@ A FileMaker widget that converts Markdown to HTML using the Showdown library.
 - Converts Markdown to HTML
 - Integrates with FileMaker through JavaScript
 - Provides a clean interface for markdown editing
-- Allows saving converted HTML back to FileMaker
+- Converted HTML passed back to FileMaker with a callback script
 - No css (bring your own css)
 
 ## Installation
@@ -30,7 +30,10 @@ https://showdownjs.com/
 ### Markdown
 https://www.markdownguide.org/
 
-### cosmoCSS
+### onFMReady
+//https://github.com/stephancasas/onfmready.js
+
+### cosmoCSS used in the demo filemaker file, not needed for the widget.
 https://cosmocss.com
 
 ### JS-in-FM
